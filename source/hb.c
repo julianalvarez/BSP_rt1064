@@ -5,7 +5,7 @@
  *      Author: PLANTIUM
  */
 
-#include <hb.h>
+#include "hb.h"
 #include "pwm.h"
 
 void HB_Init (uint32_t uFreq)
