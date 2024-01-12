@@ -4,13 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../source/adc_interface.c 
+../source/adc_interface.c \
+../source/board_csteer.c \
+../source/hb.c 
 
 C_DEPS += \
-./source/adc_interface.d 
+./source/adc_interface.d \
+./source/board_csteer.d \
+./source/hb.d 
 
 OBJS += \
-./source/adc_interface.o 
+./source/adc_interface.o \
+./source/board_csteer.o \
+./source/hb.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -25,7 +31,7 @@ source/%.o: ../source/%.c source/subdir.mk
 clean: clean-source
 
 clean-source:
-	-$(RM) ./source/adc_interface.d ./source/adc_interface.o
+	-$(RM) ./source/adc_interface.d ./source/adc_interface.o ./source/board_csteer.d ./source/board_csteer.o ./source/hb.d ./source/hb.o
 
 .PHONY: clean-source
 

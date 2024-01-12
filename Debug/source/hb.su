@@ -1,0 +1,4 @@
+../source/hb.c:11:6:HB_Init	16	static
+../source/hb.c:15:6:HB_SetPwmFreq	16	static
+../source/hb.c:21:10:HB_GetPwmFreq	4	static
+../source/hb.c:25:6:HB_Set	16	static

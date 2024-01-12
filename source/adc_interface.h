@@ -9,7 +9,6 @@
 #define ADC_INTERFACE_H_
 
 /* Include ********************************************************************/
-#include <adc.h>
 #include "include/types.h"
 
 /* Enums **********************************************************************/
@@ -44,7 +43,6 @@ typedef enum
 } ADC_IFACE_MEASUREMENT;
 
 void        ADC_Iface_Init (void);
-real_T      ADC_Iface_Get (ADC_IFACE_MEASUREMENT);
-real_T      ADC_Iface_GetAnalogInput(uint32_t port, uint32_t pin);
+real_T      ADC_Iface_Get (ADC_IFACE_MEASUREMENT id);
 
 #endif /* ADC_INTERFACE_H_ */
