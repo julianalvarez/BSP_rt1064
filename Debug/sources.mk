@@ -17,9 +17,6 @@ SUBDIRS := \
 component/lists \
 component/serial_manager \
 component/uart \
-device \
-drivers \
 source \
-utilities \
 xip \
 

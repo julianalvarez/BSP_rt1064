@@ -134,6 +134,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CSP_rt1064/CMSIS}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CSP_rt1064/xip_board}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CSP_rt1064/source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CSP_rt1064/device}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CSP_rt1064/utilities}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CSP_rt1064/drivers}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CSP_rt1064/board}&quot;"/>
