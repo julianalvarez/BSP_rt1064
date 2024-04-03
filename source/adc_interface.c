@@ -27,48 +27,42 @@ void ADC_Iface_Init (void)
     initialized = true;
 }
 
-real_T ADC_Iface_Get (ADC_IFACE_MEASUREMENT id)
+real_T ADC_Iface_Get (uint8_t id)
 {
     real_T ret;
 
     switch(id) {
         // Internal ADC
         case ADC_IFACE_V_BATT:
-            //ret = ADC_Iface_GetAnalogInput(2, 1);
+        	ret = ADC_Get(1, ADC_IFACE_V_BATT);
         break;
         case ADC_IFACE_V_CAP:
-            //ret = ADC_Iface_GetAnalogInput(2, 0);
+        	ret = ADC_Get(1, ADC_IFACE_V_CAP);
         break;
         case ADC_IFACE_V_PCB_TEMP:
-            //ret = ADC_Iface_GetAnalogInput(1, 5);
+        	ret = ADC_Get(1, ADC_IFACE_V_PCB_TEMP);
         break;
         case ADC_IFACE_V_MOTOR_CURRENT:
-            //ret = ADC_Iface_GetAnalogInput(1, 6);
+        	ret = ADC_Get(1, ADC_IFACE_V_MOTOR_CURRENT);
         break;
 
         case ADC_IFACE_V_GYRO_TEMP_Q:
-        case ADC_IFACE_V_EXT_VSREF:
-           // ret = ADC_Iface_GetAnalogInput(1, 2);
+        //case ADC_IFACE_V_EXT_VSREF:
+        	ret = ADC_Get(1, ADC_IFACE_V_GYRO_TEMP_Q);
         break;
         case ADC_IFACE_V_GYRO_TEMP_R:
-        case ADC_IFACE_V_INT_VSREF:
-           // ret = ADC_Iface_GetAnalogInput(1, 3);
+        //case ADC_IFACE_V_INT_VSREF:
+        	ret = ADC_Get(1, ADC_IFACE_V_GYRO_TEMP_R);
         break;
         case ADC_IFACE_V_GYRO_TEMP_P:
-            //ret = ADC_Iface_GetAnalogInput(1, 7);
+        	ret = ADC_Get(1, ADC_IFACE_V_GYRO_TEMP_P);
         break;
         case ADC_IFACE_V_WHEEL_ANGLE:
-            ret = ADC_Get(1, 9);
+            ret = ADC_Get(1, ADC_IFACE_V_WHEEL_ANGLE);
         break;
         case ADC_IFACE_V_DISENGAGE_ANALOG_VALUE:
-           // ret = ADC_Iface_GetAnalogInput(0, 5);
-        break;
-        case ADC_IFACE_V_0_6:
-            //ret = ADC_Iface_GetAnalogInput(0, 6);
-        break;
-        case ADC_IFACE_V_0_7:
-            //ret = ADC_Iface_GetAnalogInput(0, 7);
-        break;
+        	ret = ADC_Get(1, ADC_IFACE_V_DISENGAGE_ANALOG_VALUE);
+        break;/*
         // ADC 3244
         case ADC_IFACE_ACC_X:
             //ret = ADC8344_Get()[2];
@@ -89,8 +83,12 @@ real_T ADC_Iface_Get (ADC_IFACE_MEASUREMENT id)
             //ret = ADC8344_Get()[3];
         break;
         case ADC_IFACE_V_REF_3V3:
-
-        break;
+            if (CSTEER_GetBoardVersion() == BOARD_VERSION_1_1) {
+              	  ret = ADC8344_Get()[7];
+            } else {
+              	  ret = 3.3;
+            }
+        break;*/
         default:
             ret = 0.0;
         break;
