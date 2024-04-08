@@ -1,1 +1,5 @@
-../source/board_csteer.c:12:8:CSTEER_GetWheelAngleVoltage	16	static
+../source/board_csteer.c:5:8:CSTEER_GetBatteryVoltage	16	static
+../source/board_csteer.c:19:8:CSTEER_GetCapacitorVoltage	16	static
+../source/board_csteer.c:35:8:CSTEER_GetPcbTemperature	16	static
+../source/board_csteer.c:50:8:CSTEER_GetWheelAngleVoltage	16	static
+../source/board_csteer.c:61:8:CSTEER_GetDisengageAnalogValue	16	static
