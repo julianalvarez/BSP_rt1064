@@ -10,13 +10,15 @@
 
 void HB_Init (uint32_t uFreq)
 {
+	Init_PWM();
     HB_SetPwmFreq (uFreq);
 }
 void HB_SetPwmFreq (uint32_t uFreq)
 {
-    Init_PWM();
+	PWM_Stop(1);
+	Init_PWM();
+    PWM_SetupPwm(BOARD_PWM1_PERIPHERAL, BOARD_PWM1_SM0, BOARD_PWM1_SM0_pwm_function_config, 1U, kPWM_SignedCenterAligned, uFreq, BOARD_PWM1_SM0_SM_CLK_SOURCE_FREQ_HZ);
     PWM_Start(1);
-
 }
 uint32_t HB_GetPwmFreq (void)
 {
