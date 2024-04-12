@@ -35,6 +35,7 @@ typedef enum {
 /* Externs ********************************************************************/
 
 /* Prototypes *****************************************************************/
+int32_t 		CSTEER_Init (void);
 real_T 			CSTEER_GetWheelAngleVoltage (void);
 real_T          CSTEER_GetBatteryVoltage (void);
 real_T          CSTEER_GetCapacitorVoltage (void);

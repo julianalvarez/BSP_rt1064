@@ -1,12 +1,7 @@
-/*
- * hb.c
- *
- *  Created on: 10 ene. 2024
- *      Author: PLANTIUM
- */
-
 #include "hb.h"
 #include "pwm.h"
+
+uint32_t freq = 0;
 
 void HB_Init (uint32_t uFreq)
 {
@@ -19,10 +14,11 @@ void HB_SetPwmFreq (uint32_t uFreq)
 	Init_PWM();
     PWM_SetupPwm(BOARD_PWM1_PERIPHERAL, BOARD_PWM1_SM0, BOARD_PWM1_SM0_pwm_function_config, 1U, kPWM_SignedCenterAligned, uFreq, BOARD_PWM1_SM0_SM_CLK_SOURCE_FREQ_HZ);
     PWM_Start(1);
+    freq = uFreq;
 }
 uint32_t HB_GetPwmFreq (void)
 {
-	return -1;
+	return freq;
 }
 void HB_Set (int32_t sSetPoint, uint8_t bActive)
 {
